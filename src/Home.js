@@ -1,27 +1,17 @@
-import { useState} from 'react';
 import BlogList from "./BlogList";
+import useFetch from "./useFetch";
 
 const Home = () => {
-	const [blogs, setBlogs] = useState([
-		{title: "My new Website", body: "lorem ipsum", author: "Melvin", id: 1},
-		{title: "Welcome aboard", body: "lorem ipsum", author: "Captain hook", id: 2},
-		{title: "My ninja way", body: "lorem ipsum", author: "Shaun", id: 3},
-	]);
-	const [showMelvin, setShowMelvin] = useState(true);
-	const showOrNot = () =>{
-		showMelvin ? setShowMelvin(false) :setShowMelvin(true) 
-	}
-	
-	return ( 
-		<div className="home">
-			
-			<button onClick={showOrNot}>{showMelvin? "Hide melvin": "show Melvin"}</button>
+  const { data: blogs, isPending, error } = useFetch('http://localhost:8000/blogs');
 
-			{ !showMelvin ? <BlogList blogs={blogs} title="All blogs" />:<BlogList blogs={blogs.filter((blog)=> blog.author ==="Melvin")} title="Melvin Blog" />}
-			
-			
-		</div>
-	 );
-}
- 
+    return ( 
+      <div className = "home" >
+          {error &&  <p className="error"> {error} </p>}
+          { isPending &&  <div className="loading">Loading...</div>}
+          { blogs && <BlogList blogs = { blogs } title = "All blogs"/>}
+      </div>
+    );
+};
+
 export default Home;
+
