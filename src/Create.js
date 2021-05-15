@@ -18,6 +18,7 @@ const Create = () => {
 						<label htmlFor="title">Blog title</label>
 						<input className="input" name="title" id="title" type="text"/>
 					</div>
+					
 					<div className="input-wrapper">
 						<label htmlFor="author">Blog author</label>
 						<input className="input" name="author" id="author" type="text"/>

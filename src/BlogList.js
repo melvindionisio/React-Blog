@@ -7,7 +7,7 @@ const BlogList = ({ blogs, title }) => {
         <h2 > { title } < /h2> 
         { blogs.map((blog) => ( 
           <div className = "blog-preview" key = { blog.id } >
-            {/*redirecting to the routes for blog id*/}
+            {/* redirecting to the routes for blog id */}
             <Link to={`/blogs/${blog.id}`}>
                 <div>
                     <h2 > { blog.title } < /h2> 

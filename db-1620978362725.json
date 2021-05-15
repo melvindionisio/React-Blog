@@ -1,0 +1,28 @@
+{
+  "blogs": [
+    {
+      "title": "My First blog",
+      "body": "Hello motherfuckers in the earth",
+      "author": "Melvin",
+      "id": 1
+    },
+    {
+      "title": "This is s opening party",
+      "body": "Hello motherfuckers in the earth",
+      "author": "Tae",
+      "id": 2
+    },
+    {
+      "title": "My First blog 2",
+      "body": "Hello motherfuckers in the earth",
+      "author": "Melvin",
+      "id": 3
+    },
+    {
+      "title": "This is s opening party 2",
+      "body": "Hello motherfuckers in the earth",
+      "author": "Tae",
+      "id": 4
+    }
+  ]
+}
